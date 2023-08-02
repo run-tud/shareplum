@@ -248,7 +248,10 @@ class _List2007:
 
                 # query["Where"] = where
                 modified_query["Where"] = where
-
+            
+            if "OrderBy" in query:
+                modified_query["OrderBy"] = query["OrderBy"]
+            
             soap_request.add_query(modified_query)
 
         # Set Row Limit
